@@ -1,15 +1,15 @@
 package com.example.FinalDesdeCero.entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Odontologos")
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -24,26 +24,5 @@ public class Odontologo {
     @Column(name = "matricula")
     private String matricula;
 
-    // Constructor vacio
 
-    public Odontologo() {
-    }
-
-    // Constructor sin id
-
-    public Odontologo(String apellido, String nombre, String matricula) {
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.matricula = matricula;
-    }
-
-    // Construcotr con id
-
-
-    public Odontologo(Long id, String apellido, String nombre, String matricula) {
-        this.id = id;
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.matricula = matricula;
-    }
 }

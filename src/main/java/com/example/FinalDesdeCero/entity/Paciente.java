@@ -2,9 +2,7 @@ package com.example.FinalDesdeCero.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
 import javax.persistence.*;
@@ -13,6 +11,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Pacientes")
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -32,28 +32,5 @@ public class Paciente {
     @Column (name ="FechaDeAlta")
     private Date fechaDeAlta;
 
-    //Constructor vacio
 
-    public Paciente() {
-    }
-
-
-    // Constructor sin id
-    public Paciente(String apellido, String nombre, Set<Domicilio> domicilio, String dni, Date fechaDeAlta) {
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.domicilio = domicilio;
-        this.dni = dni;
-        this.fechaDeAlta = fechaDeAlta;
-    }
-
-    // Constructor con id
-    public Paciente(Long id, String apellido, String nombre, Set<Domicilio> domicilio, String dni, Date fechaDeAlta) {
-        this.id = id;
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.domicilio = domicilio;
-        this.dni = dni;
-        this.fechaDeAlta = fechaDeAlta;
-    }
 }

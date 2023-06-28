@@ -5,13 +5,15 @@ import com.example.FinalDesdeCero.entity.TurnoDTO;
 import com.example.FinalDesdeCero.repository.ITurnoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class TurnoService implements ITurnoService{
 
     @Autowired
-    ITurnoRepository turnoRepository;
+    private ITurnoRepository turnoRepository;
 
     @Autowired
     ObjectMapper mapper;

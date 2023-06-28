@@ -24,13 +24,18 @@ public class Paciente {
     private String apellido;
     @Column (name ="nombre")
     private String nombre;
-    @OneToMany (mappedBy = "paciente")
-    @JsonIgnore
-    private Set<Domicilio> domicilio; //Consultar si esta bien?
     @Column (name ="dni")
     private String dni;
     @Column (name ="FechaDeAlta")
     private Date fechaDeAlta;
+
+    @ManyToOne
+    @JoinColumn(name = "domicilio_id")
+    private Domicilio domicilio;
+
+    @OneToMany(mappedBy = "paciente")
+    @JsonIgnore
+    private Set<Turno> turnos;
 
 
 }

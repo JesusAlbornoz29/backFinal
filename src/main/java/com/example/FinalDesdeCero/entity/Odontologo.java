@@ -1,10 +1,12 @@
 package com.example.FinalDesdeCero.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Odontologos")
@@ -24,5 +26,8 @@ public class Odontologo {
     @Column(name = "matricula")
     private String matricula;
 
+    @OneToMany(mappedBy = "odontologo")
+    @JsonIgnore
+    private Set<Turno> turnos;
 
 }

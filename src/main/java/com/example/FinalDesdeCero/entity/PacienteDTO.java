@@ -11,6 +11,5 @@ public class PacienteDTO {
     private Long id;
     private String apellido;
     private String nombre;
-    private String dni;
-    private Data fechaDeAlta;
+    private Domicilio domicilio;
 }

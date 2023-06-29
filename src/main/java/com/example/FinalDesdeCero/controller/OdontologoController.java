@@ -18,9 +18,13 @@ public class OdontologoController {
 
     //AGREGAR ODONTOLOGO
     @PostMapping ("/")
-    public ResponseEntity<?> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO){
-        odontologoService.crearOdontologo(odontologoDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<String> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
+        try {
+            odontologoService.crearOdontologo(odontologoDTO);
+            return ResponseEntity.ok("Odontologo creado correctamente");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el Odontologo");
+        }
     }
 
     // BUSCARPORID
@@ -39,13 +43,15 @@ public class OdontologoController {
     // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id){
+        ResponseEntity<String> response = null;
         odontologoService.eliminarOdongologo(id);
+        response = ResponseEntity.status(HttpStatus.OK).body("El Odontologo fue eliminado");
         return  ResponseEntity.ok(HttpStatus.OK);
     }
 
     //GETTODOS
-    @GetMapping ("/todos")
-    public Collection<OdontologoDTO> getTodosOdontologos() {
+    @GetMapping ("/listar")
+    public Collection<OdontologoDTO> listarOdontologos() {
         return odontologoService.getTodos();
     }
 }

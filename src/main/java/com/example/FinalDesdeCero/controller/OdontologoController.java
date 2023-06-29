@@ -1,5 +1,6 @@
 package com.example.FinalDesdeCero.controller;
 
+import com.example.FinalDesdeCero.entity.Odontologo;
 import com.example.FinalDesdeCero.entity.OdontologoDTO;
 import com.example.FinalDesdeCero.service.IOdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-
+//
 @RestController
 @RequestMapping("/odontologos")
 public class OdontologoController {
@@ -17,7 +18,7 @@ public class OdontologoController {
     IOdontologoService odontologoService;
 
     //AGREGAR ODONTOLOGO
-    @PostMapping ("/")
+    /*@PostMapping ("/")
     public ResponseEntity<String> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
         try {
             odontologoService.crearOdontologo(odontologoDTO);
@@ -26,7 +27,13 @@ public class OdontologoController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el Odontologo");
         }
     }
+*/
 
+    @PostMapping("/")
+    public ResponseEntity<OdontologoDTO> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
+        odontologoService.crearOdontologo(odontologoDTO);
+        return ResponseEntity.ok(odontologoDTO);
+    }
     // BUSCARPORID
     @GetMapping("/{id}")
     public OdontologoDTO getOdontologo(@PathVariable Long id) {

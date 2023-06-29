@@ -68,3 +68,6 @@
 [2023-06-2819:28:32] [ ERROR] [GlobalExceptionHandler:19] JSON parse error: Cannot construct instance of `com.example.FinalDesdeCero.entity.OdontologoDTO` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (3); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.example.FinalDesdeCero.entity.OdontologoDTO` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (3)
  at [Source: (PushbackInputStream); line: 3, column: 20] (through reference chain: com.example.FinalDesdeCero.entity.TurnoDTO["odontologo"])
 [2023-06-2820:51:54] [ ERROR] [GlobalExceptionHandler:19] No class com.example.FinalDesdeCero.entity.Turno entity with id 1 exists!
+[2023-06-2913:45:55] [ ERROR] [GlobalExceptionHandler:19] JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (PushbackInputStream); line: 4, column: 6]
+[2023-06-2913:53:50] [ ERROR] [GlobalExceptionHandler:19] Request method 'GET' not supported

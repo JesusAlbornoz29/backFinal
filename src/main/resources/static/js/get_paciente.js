@@ -28,6 +28,7 @@ window.addEventListener('load', function() {
             '<td class="td_apellido">' + paciente.apellido.toUpperCase() + '</td>' +
             '<td class="td_dni">' + paciente.dni.toUpperCase() + '</td>' +
             '<td class="td_fechaDeAlta">' + fechaFormateada + '</td>' + // Utilizar la fecha formateada aquí
+            '<td class="td_domicilio">' + paciente.domicilio +
             '<td>' + deleteButton + '</td>';
         }
       });

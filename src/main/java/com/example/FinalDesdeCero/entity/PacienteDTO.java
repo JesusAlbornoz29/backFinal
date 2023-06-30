@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.xml.crypto.Data;
 
+// Cambiar id por dni
 @Getter
 @Setter
 public class PacienteDTO {

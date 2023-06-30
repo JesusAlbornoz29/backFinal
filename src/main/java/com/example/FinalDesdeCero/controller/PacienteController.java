@@ -44,7 +44,7 @@ public class PacienteController {
     }
 
     //GETTODOS
-    @GetMapping ("/todos")
+    @GetMapping ("/listar")
     public Collection<PacienteDTO> getTodosPacientes() {
         return pacienteService.getTodos();
     }

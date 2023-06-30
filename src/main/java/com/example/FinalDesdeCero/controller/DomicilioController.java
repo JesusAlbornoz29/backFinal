@@ -43,7 +43,7 @@ public class DomicilioController {
     }
 
     //GETTODOS
-    @GetMapping ("/todos")
+    @GetMapping ("/listar")
     public Collection<DomicilioDTO> getTodosDomicilios() {
         return domicilioService.getTodos();
     }

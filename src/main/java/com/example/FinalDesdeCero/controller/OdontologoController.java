@@ -18,17 +18,6 @@ public class OdontologoController {
     IOdontologoService odontologoService;
 
     //AGREGAR ODONTOLOGO
-    /*@PostMapping ("/")
-    public ResponseEntity<String> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
-        try {
-            odontologoService.crearOdontologo(odontologoDTO);
-            return ResponseEntity.ok("Odontologo creado correctamente");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el Odontologo");
-        }
-    }
-*/
-
     @PostMapping("/")
     public ResponseEntity<OdontologoDTO> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
         odontologoService.crearOdontologo(odontologoDTO);

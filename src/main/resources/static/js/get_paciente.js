@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
             paciente.id +
             '</button>';
 
-          let fechaDeAlta = new Date(paciente.fechaDeAlta);
+          let fechaDeAlta = new Date();
           let fechaFormateada = fechaDeAlta.toLocaleDateString();
 
           pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +

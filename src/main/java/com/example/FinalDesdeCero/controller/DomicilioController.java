@@ -1,50 +1,60 @@
 package com.example.FinalDesdeCero.controller;
 
-import com.example.FinalDesdeCero.entity.DomicilioDTO;
+import com.example.FinalDesdeCero.entity.Domicilio;
+import com.example.FinalDesdeCero.exeption.ResourceNotFoundException;
 import com.example.FinalDesdeCero.service.IDomicilioService;
+import com.example.FinalDesdeCero.service.impl.DomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
-@RequestMapping("/domicilios")
+@RequestMapping("/domicilio")
 public class DomicilioController {
-    @Autowired
-    IDomicilioService domicilioService;
+    DomicilioService domicilioService;
 
-    //AGREGAR ODONTOLOGO
-    @PostMapping ("/")
-    public ResponseEntity<?> crearDomicilio(@RequestBody DomicilioDTO domicilioDTO){
-        domicilioService.crearDomicilio(domicilioDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    // Constructor de DomicilioController que permite la inyección de dependencias.
+    public DomicilioController(DomicilioService domicilioService) {
+        this.domicilioService = domicilioService;
     }
 
-    // BUSCARPORID
+    // En la url "/domicilio/listar" retorno una lista de Domicilio
+    @GetMapping("/listar")
+    public List<Domicilio> buscarDomicilios(){
+        List<Domicilio> listarDomicilios = domicilioService.buscarTodos();
+        return listarDomicilios;
+    }
+
+    // En la url "/domicilio/{id}" retorno el domicilio deseado (segun el ID) y si no lo encuentra se dispara una Exception
     @GetMapping("/{id}")
-    public DomicilioDTO getDomicilio(@PathVariable Long id) {
-        return domicilioService.leerDomicilio(id);
+    public ResponseEntity<Domicilio> buscarUnDomicilio(@PathVariable Long id) throws Exception {
+        return ResponseEntity.ok(domicilioService.buscarPorId(id));
     }
 
-    //MODIFICAR
+    // En la url "/domicilio/guardar" hacemos un POST para guardar el Domicilio
+    @PostMapping("/guardar")
+    public ResponseEntity<?> guardarDomicilio(@RequestBody Domicilio domicilio){
+        domicilioService.guardar(domicilio);
+        return ResponseEntity.status(HttpStatus.OK).body(domicilio.getId());
+    }
+
+    // En la url "/domicilio/modificar" actualizamos un domicilio ya existente
     @PutMapping("/modificar")
-    public ResponseEntity<?> modificarDomicilio(@RequestBody DomicilioDTO domicilioDTO){
-        domicilioService.modificarDomicilio(domicilioDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<?> actualizarUnDomicilio(@RequestBody Domicilio domicilio){
+        domicilioService.actualizar(domicilio);
+        return ResponseEntity.ok().body("Se modifico el domicilio.");
     }
 
-    // DELETE
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarDomicilio(@PathVariable Long id){
-        domicilioService.eliminarDomicilio(id);
-        return  ResponseEntity.ok(HttpStatus.OK);
-    }
-
-    //GETTODOS
-    @GetMapping ("/listar")
-    public Collection<DomicilioDTO> getTodosDomicilios() {
-        return domicilioService.getTodos();
+    // En la url "/domicilio/eliminar/{id}" utilizamos el metodo DELETE para eliminar un domicilio segun su ID, si no se encuentra lanzo la exception ResourceNotFoundException
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarDomicilio(@PathVariable Long id) throws ResourceNotFoundException {
+        ResponseEntity<?>response = null;
+        domicilioService.eliminar(id);
+        response = ResponseEntity.status(HttpStatus.OK).body("Domicilio eliminado.");
+        return response;
     }
 }

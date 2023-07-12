@@ -1,18 +1,20 @@
 package com.example.FinalDesdeCero.service;
 
-import com.example.FinalDesdeCero.entity.DomicilioDTO;
+import com.example.FinalDesdeCero.entity.Domicilio;
+import com.example.FinalDesdeCero.exeption.ResourceNotFoundException;
 
-import java.util.Set;
+
+import java.util.List;
 
 public interface IDomicilioService {
-    void crearDomicilio(DomicilioDTO domicilioDTO);
+    void actualizar (Domicilio domicilio);
 
-    // BUSCAR
-    DomicilioDTO leerDomicilio (Long id);
-    // MODIFICAR
-    void modificarDomicilio (DomicilioDTO domicilioDTO);
-    // ELIMINAR
-    void eliminarDomicilio(Long id);
-    // LISTAR TODOS
-    Set<DomicilioDTO> getTodos();
+    Domicilio buscarPorId (Long id);
+
+    List<Domicilio> buscarTodos();
+
+    Long guardar (Domicilio domicilio);
+
+    void eliminar (Long id) throws ResourceNotFoundException;
+
 }

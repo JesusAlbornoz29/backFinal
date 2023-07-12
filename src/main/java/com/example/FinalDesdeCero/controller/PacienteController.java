@@ -1,51 +1,62 @@
 package com.example.FinalDesdeCero.controller;
 
 
-import com.example.FinalDesdeCero.entity.PacienteDTO;
+import com.example.FinalDesdeCero.dto.PacienteDTO;
+import com.example.FinalDesdeCero.entity.Paciente;
+import com.example.FinalDesdeCero.exeption.ResourceNotFoundException;
 import com.example.FinalDesdeCero.service.IPacienteService;
+import com.example.FinalDesdeCero.service.impl.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
-@RequestMapping("/pacientes")
+@RequestMapping("/paciente")
 public class PacienteController {
-    @Autowired
-    IPacienteService pacienteService;
+    PacienteService pacienteService;
 
-    //AGREGAR ODONTOLOGO
-    @PostMapping ("/")
-    public ResponseEntity<?> crearPaciente(@RequestBody PacienteDTO pacienteDTO){
-        pacienteService.crearPaciente(pacienteDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    // Constructor de PacienteController que permite la inyección de dependencias.
+    public PacienteController(PacienteService pacienteService) {
+        this.pacienteService = pacienteService;
     }
 
-    // BUSCARPORID
+    // En la url "/paciente/listar" retorno una lista de PacienteDTO
+    @GetMapping("/listar")
+    public List<PacienteDTO> obtenerPacientes(){
+        List<PacienteDTO> listaPacientes = pacienteService.buscarTodos();
+        return listaPacientes;
+    }
+
+    // En la url "/paciente/{id}" retorno el pacienteDTO deseado (segun el ID) y si no lo encuentra se dispara una Exception
     @GetMapping("/{id}")
-    public PacienteDTO getPaciente(@PathVariable Long id) {
-        return pacienteService.leerPaciente(id);
+    public ResponseEntity<PacienteDTO> obtenerUnPaciente(@PathVariable Long id) throws Exception {
+        return ResponseEntity.ok(pacienteService.buscarPorId(id));
     }
 
-    //MODIFICAR
-    @PutMapping ("/modificar")
-    public ResponseEntity<?> modificarPaciente(@RequestBody PacienteDTO pacienteDTO){
-        pacienteService.modificarPaciente(pacienteDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    // En la url "/paciente/guardar" hacemos un POST para guardar el Paciente
+    @PostMapping("/guardar")
+    public ResponseEntity<?> guardarPaciente(@RequestBody Paciente paciente){
+        pacienteService.guardar(paciente);
+        return ResponseEntity.ok("Paciente guardado");
     }
 
-    // DELETE
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarPaciente(@PathVariable Long id){
-        pacienteService.eliminarPaciente(id);
-        return  ResponseEntity.ok(HttpStatus.OK);
+    // En la url "/paciente/modificar" actualizamos un paciente ya existente
+    @PutMapping("/modificar")
+    public ResponseEntity<?> actualizarUnPaciente(@RequestBody Paciente paciente){
+        pacienteService.actualizar(paciente);
+        return ResponseEntity.ok("Paciente actualizado");
     }
 
-    //GETTODOS
-    @GetMapping ("/listar")
-    public Collection<PacienteDTO> getTodosPacientes() {
-        return pacienteService.getTodos();
+    // En la url "/paciente/eliminar/{id}" utilizamos el metodo DELETE para eliminar un paciente segun su ID, si no existe lanzo ResourceNotFoundException
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> eliminarUnPaciente(@PathVariable Long id) throws ResourceNotFoundException {
+        ResponseEntity<String>response = null;
+        pacienteService.eliminar(id);
+        response =ResponseEntity.status(HttpStatus.OK).body("Paciente eliminado.");
+        return response;
     }
 }

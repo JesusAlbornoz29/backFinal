@@ -1,19 +1,21 @@
 package com.example.FinalDesdeCero.service;
 
 
-import com.example.FinalDesdeCero.entity.PacienteDTO;
+import com.example.FinalDesdeCero.dto.PacienteDTO;
+import com.example.FinalDesdeCero.entity.Paciente;
+import com.example.FinalDesdeCero.exeption.ResourceNotFoundException;
 
+import java.util.List;
 import java.util.Set;
 
 public interface IPacienteService {
-    void crearPaciente(PacienteDTO pacienteDTO);
+    void actualizar (Paciente paciente);
 
-    // BUSCAR
-    PacienteDTO leerPaciente (Long id);
-    // MODIFICAR
-    void modificarPaciente (PacienteDTO pacienteDTO);
-    // ELIMINAR
-    void eliminarPaciente(Long id);
-    // LISTAR TODOS
-    Set<PacienteDTO> getTodos();
+    PacienteDTO buscarPorId(Long id) throws Exception;
+
+    List<PacienteDTO> buscarTodos();
+
+    void guardar(Paciente paciente);
+
+    void eliminar(Long id) throws ResourceNotFoundException;
 }

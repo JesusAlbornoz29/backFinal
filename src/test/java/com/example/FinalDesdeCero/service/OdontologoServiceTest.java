@@ -1,13 +1,9 @@
 package com.example.FinalDesdeCero.service;
 
-import com.example.FinalDesdeCero.entity.Odontologo;
-import com.example.FinalDesdeCero.entity.OdontologoDTO;
-import org.junit.jupiter.api.BeforeEach;
+import com.example.FinalDesdeCero.dto.OdontologoDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.*;
 

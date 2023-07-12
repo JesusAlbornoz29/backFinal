@@ -10,6 +10,7 @@ import java.util.Collections;
 
 
 @Entity
+@Table(name = "USUARIOS") // Establecemos el nombre de la tabla en la BD
 public class AppUser implements UserDetails {
 
     @Id
@@ -79,7 +80,7 @@ public class AppUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority grantedAuthority = new SimpleGrantedAuthority((appUserRole.name())); // es una clase que nos ayuda a manejar los roles de usuarios
+        SimpleGrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + appUserRole.name()); // es una clase que nos ayuda a manejar los roles de usuarios
         return Collections.singletonList(grantedAuthority);
     }
 

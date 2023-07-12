@@ -107,3 +107,19 @@ delete from odontologos where id=? [23503-200]]; nested exception is org.hiberna
 [2023-07-1214:19:47] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
 [2023-07-1214:23:36] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
 [2023-07-1214:23:42] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:43:49] [ INFO ] [DomicilioService:54] Domicilio - guardar: Se va guardar el domicilio
+[2023-07-1214:43:49] [ INFO ] [PacienteService:69] Paciente - guardar: Se va guardar el paciente
+[2023-07-1214:43:55] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1214:44:08] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-1214:44:11] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:44:12] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1214:44:15] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:44:15] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1214:44:19] [ INFO ] [TurnoService:68] Turno - guardar: Se va agregar el turno
+[2023-07-1214:44:22] [ INFO ] [TurnoService:68] Turno - guardar: Se va agregar el turno
+[2023-07-1214:44:24] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-07-1214:44:24] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-07-1214:44:26] [ WARN ] [TurnoService:77] Turno - eliminar: Se ha eliminado el turno
+[2023-07-1214:44:30] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:44:30] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1214:44:30] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos

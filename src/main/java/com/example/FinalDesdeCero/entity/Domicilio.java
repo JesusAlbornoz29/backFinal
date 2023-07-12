@@ -9,47 +9,39 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table (name = "Domicilios")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Table(name = "DOMICILIOS") // Establecemos el nombre de la tabla en la BD
+@Getter @Setter  // Creamos los Getters y Setters
+@NoArgsConstructor // Constructor sin parámetros
+@AllArgsConstructor // Constructor con todos los parámetros
 @ToString
 public class Domicilio {
+
+    // Establecemos el Id como Primary Key de tipo indentity
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "calle")
-    @NotNull ()
-    @NotBlank ()
+    @NotNull()
+    @NotBlank()
     private String calle;
 
-    @Column (name = "numero")
-    @NotNull ()
-    @NotBlank ()
-    private Integer numero;
+    @NotNull()
+    @NotBlank()
+    private String numero;
 
-    @Column (name = "localidad")
-    @NotNull ()
-    @NotBlank ()
+    @NotNull()
+    @NotBlank()
     private String localidad;
 
-    @Column (name = "provincia")
-    @NotNull ()
-    @NotBlank ()
+    @NotNull()
+    @NotBlank()
     private String provincia;
 
-    /*
-    @ManyToOne
-    @JoinColumn(name = "paciente_id",nullable = true)  //Consultar si esta bien?
-    private Paciente paciente;
-    */
-
-    public Domicilio(String calle, Integer numero, String localidad, String provincia) {
+    public Domicilio(String calle, String numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
         this.provincia = provincia;
     }
+
 }

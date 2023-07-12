@@ -67,7 +67,7 @@ public class PacienteService implements IPacienteService {
     // Guardo un Paciente en la base de datos utilizando el método save de JpaRepository.
     public void guardar(Paciente paciente){
         logger.info("Paciente - guardar: Se va guardar el paciente");
-        paciente.setFechaDeAlta(LocalDate.now());
+        paciente.setFechaAlta(LocalDate.now());
         iPacienteRepository.save(paciente);
     }
 

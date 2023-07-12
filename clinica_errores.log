@@ -102,3 +102,8 @@ delete from odontologos where id=? [23503-200]]; nested exception is org.hiberna
 [2023-07-1210:06:19] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
 [2023-07-1210:06:47] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
 [2023-07-1210:07:01] [ INFO ] [TurnoService:68] Turno - guardar: Se va agregar el turno
+[2023-07-1214:19:44] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-1214:19:46] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:19:47] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1214:23:36] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-1214:23:42] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos

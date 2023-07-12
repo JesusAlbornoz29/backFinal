@@ -4,14 +4,11 @@ package com.example.FinalDesdeCero.controller;
 import com.example.FinalDesdeCero.dto.PacienteDTO;
 import com.example.FinalDesdeCero.entity.Paciente;
 import com.example.FinalDesdeCero.exeption.ResourceNotFoundException;
-import com.example.FinalDesdeCero.service.IPacienteService;
 import com.example.FinalDesdeCero.service.impl.PacienteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController

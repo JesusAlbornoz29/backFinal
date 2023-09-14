@@ -123,3 +123,30 @@ delete from odontologos where id=? [23503-200]]; nested exception is org.hiberna
 [2023-07-1214:44:30] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
 [2023-07-1214:44:30] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
 [2023-07-1214:44:30] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-07-1323:03:51] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-1323:04:15] [ INFO ] [DomicilioService:54] Domicilio - guardar: Se va guardar el domicilio
+[2023-07-1323:04:15] [ INFO ] [PacienteService:69] Paciente - guardar: Se va guardar el paciente
+[2023-07-1323:04:20] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1323:04:20] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1323:04:29] [ INFO ] [TurnoService:68] Turno - guardar: Se va agregar el turno
+[2023-07-1323:04:31] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-07-1323:04:36] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-1323:04:39] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-1323:04:40] [ INFO ] [OdontologoService:45] Odontologo - buscarPorId: Se encontro el odontologo y se convertira a DTO para ser devuelto
+[2023-07-1323:04:40] [ WARN ] [TurnoService:77] Turno - eliminar: Se ha eliminado el turno
+[2023-07-1323:04:40] [ WARN ] [OdontologoService:75] Odontologo - eliminar: Se ha eliminado el odontologo
+[2023-07-1323:04:42] [ WARN ] [OdontologoService:48] Odontologo - buscarPorId: No se encontro ningun odontologo con ese ID
+[2023-07-2612:22:06] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-2612:22:08] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-2612:22:10] [ INFO ] [OdontologoService:45] Odontologo - buscarPorId: Se encontro el odontologo y se convertira a DTO para ser devuelto
+[2023-07-2612:22:10] [ WARN ] [OdontologoService:75] Odontologo - eliminar: Se ha eliminado el odontologo
+[2023-07-2612:22:12] [ WARN ] [OdontologoService:48] Odontologo - buscarPorId: No se encontro ningun odontologo con ese ID
+[2023-07-2612:22:27] [ INFO ] [OdontologoService:66] Odontologo - guardar: Se va agregar el odontologo
+[2023-07-2612:22:45] [ INFO ] [DomicilioService:54] Domicilio - guardar: Se va guardar el domicilio
+[2023-07-2612:22:45] [ INFO ] [PacienteService:69] Paciente - guardar: Se va guardar el paciente
+[2023-07-2612:22:47] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-2612:22:51] [ INFO ] [OdontologoService:58] Odontologo - buscarTodos: Se esta iterando el array de odontologos
+[2023-07-2612:22:51] [ INFO ] [PacienteService:61] Paciente - buscarTodos: Se esta iterando el array de pacientes
+[2023-07-2612:23:10] [ INFO ] [TurnoService:68] Turno - guardar: Se va agregar el turno
+[2023-07-2612:23:12] [ INFO ] [TurnoService:60] Turno - buscarTodos: Se esta iterando el array de turnos
+[2023-07-2612:23:14] [ WARN ] [TurnoService:77] Turno - eliminar: Se ha eliminado el turno
